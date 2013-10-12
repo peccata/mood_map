@@ -18,6 +18,8 @@ describe "User pages" do
 
   describe "Profile page" do
     let(:user) { FactoryGirl.create(:user) }
+    let!(:m1) { FactoryGirl.create(:mood, user: user, state: 3) }
+    let!(:m2) { FactoryGirl.create(:mood, user: user, state: 7) }
 
     before(:each) do
       sign_in user
@@ -26,6 +28,12 @@ describe "User pages" do
 
     it { should have_title(user.name) }
     it { should have_content(user.name) }
+
+    describe "moods" do
+      it { should have_content(m1.state) }
+      it { should have_content(m2.state) }
+      it { should have_content(user.moods.count) }
+    end
   end
 
   describe "signup page" do

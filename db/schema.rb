@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131007091831) do
+ActiveRecord::Schema.define(version: 20131012114455) do
+
+  create_table "moods", force: true do |t|
+    t.integer  "state"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "moods", ["user_id", "created_at"], name: "index_moods_on_user_id_and_created_at"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

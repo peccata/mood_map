@@ -4,4 +4,9 @@ FactoryGirl.define do
     sequence(:email) { |n| "person_#{n}@example.com"}
     password "foobar2000"
   end
+
+  factory :mood do
+    state 1
+    user
+  end
 end
