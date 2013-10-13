@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :moods
+  has_many :moods, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

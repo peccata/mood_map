@@ -3,4 +3,8 @@
   <span class="timestamp">
     Saved <%= time_ago_in_words(mood.created_at) %> ago.
   </span>
+  <% if (mood.user == current_user )%>
+    <%= link_to "delete", mood, method: :delete, data: { confirm: "You sure?" }, title: mood.state %>
+  <% end %>
 </li>
+
