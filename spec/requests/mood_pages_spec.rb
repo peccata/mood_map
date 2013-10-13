@@ -23,3 +23,4 @@ describe "MoodPages" do
   end
 
 end
+
