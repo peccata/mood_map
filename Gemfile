@@ -4,16 +4,12 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 gem 'devise'
-
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
-
 gem 'faker', '1.1.2'
-
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
+  gem 'sqlite3'
 end
 
 group :test do
