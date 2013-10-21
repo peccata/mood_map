@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     if signed_in?
-      @mood  = current_user.moods.build
+      @mood = current_user.moods.new
     end
   end
 

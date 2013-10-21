@@ -1,5 +1,5 @@
 class MoodsController < ApplicationController
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user, only: :destroy
 
   def create
     @mood = current_user.moods.build(mood_params)
@@ -11,7 +11,7 @@ class MoodsController < ApplicationController
 
   def destroy
     @mood.destroy
-    redirect_to root_url
+    redirect_to user_url(current_user)
   end
 
   private
@@ -21,8 +21,6 @@ class MoodsController < ApplicationController
   end
 
   def correct_user
-    @mood = current_user.moods.find_by(id: params[:id])
-    redirect_to root_url if @mood.nil?
+    @mood = current_user.moods.find_by_timestamp!(params[:id]) or redirect_to(root_url)
   end
-
 end

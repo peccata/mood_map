@@ -11,9 +11,9 @@
   <div class="span8">
     <% if @user.moods.any? %>
       <h3>Moods (<%= @user.moods.count %>)</h3>
-      <ol class="moods">
+      <div class="moods">
       <%= render @moods %>
-      </ol>
+      </div>
     <% end %>
   </div>
 </div>

@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131012114455) do
+ActiveRecord::Schema.define(version: 20131021082559) do
 
   create_table "moods", force: true do |t|
     t.integer  "state"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "timestamp"
   end
 
-  add_index "moods", ["user_id", "created_at"], name: "index_moods_on_user_id_and_created_at"
+  add_index "moods", ["user_id", "timestamp"], name: "index_moods_on_user_id_and_timestamp"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -36,8 +37,13 @@ ActiveRecord::Schema.define(version: 20131012114455) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
   end
 
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
