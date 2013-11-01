@@ -3,9 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+gem "letter_opener", :group => :development
 gem 'devise'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 gem 'faker', '1.1.2'
+gem 'figaro'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'

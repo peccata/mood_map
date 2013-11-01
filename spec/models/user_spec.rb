@@ -3,12 +3,13 @@ require 'spec_helper'
 describe User do
 
   before do
-    @user = User.new(name: "Example User", email: "user@example.com", password: "foobar2000")
+    @user = User.new(nickname: "example", email: "user@example.com", password: "foobar2000")
   end
 
   subject { @user }
 
   it { should respond_to(:name) }
+  it { should respond_to(:nickname) }
 
   it { should be_valid }
 

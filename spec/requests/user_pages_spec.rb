@@ -26,7 +26,8 @@ describe "User pages" do
       visit user_path(user)
     end
 
-    it { should have_title(user.name) }
+    it { should have_title(user.nickname) }
+    it { should have_content(user.nickname) }
     it { should have_content(user.name) }
 
     describe "moods" do

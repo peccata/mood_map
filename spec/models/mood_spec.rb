@@ -10,5 +10,6 @@ describe Mood do
   it { should respond_to(:state) }
   it { should respond_to(:user_id) }
   it { should respond_to(:user) }
+  it { should respond_to(:timestamp) }
   its(:user) { should eq user }
 end

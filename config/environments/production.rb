@@ -77,4 +77,17 @@ MoodMap::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-end
+
+  config.action_mailer.default_url_options = { :host => ENV["APP_URL"] }
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    authentication: "plain",
+    enable_starttls_auto: true,
+    address: ENV["MAIL_HOST"],
+    port: ENV["MAIL_PORT"],
+    user_name: ENV["MAIL_USER"],
+    password: ENV["MAIL_PASSWORD"]
+  }
+ end
