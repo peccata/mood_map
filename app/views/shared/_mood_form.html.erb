@@ -1,7 +1,7 @@
 <%= form_for(@mood) do |f| %>
-<div>
-  <%= f.select :state, (1..10).to_a %>
-</div><br />
+<mood_slider>
+  <%= f.range_field :state, min: 1, max: 10%>
+</mood_slider><br />
 <div>
   <%= f.submit "Save", class: "btn btn-large btn-primary" %>
 </div>
