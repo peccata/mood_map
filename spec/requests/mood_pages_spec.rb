@@ -18,7 +18,9 @@ describe "MoodPages" do
     before { visit root_path }
 
     describe "with valid information" do
-      before { select '7', from: 'mood_state' }
+      before :each do
+        find("input#mood_state").set("9")
+      end
 
       it "should save mood" do
         expect { click_button "Save" }.to change{ Mood.count }.by(1)

@@ -1,8 +1,13 @@
 <%= form_for(@mood) do |f| %>
-<mood_slider>
-  <%= f.range_field :state, min: 1, max: 10%>
-</mood_slider><br />
+<span id="mood_display">6</span><br />
+<%= f.range_field :state, min: 1, max: 10, class: "mood_select" %><br />
 <div>
   <%= f.submit "Save", class: "btn btn-large btn-primary" %>
 </div>
 <% end %>
+
+<script>
+  $("input#mood_state").change(function(){
+    $("span#mood_display").text($(this).val());
+  });
+</script>
