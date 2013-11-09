@@ -6,8 +6,4 @@
 </div>
 <% end %>
 
-<script>
-  $("input#mood_state").change(function(){
-    $("span#mood_display").text($(this).val());
-  });
-</script>
+<%= javascript_include_tag "mood.slide-display" %>
