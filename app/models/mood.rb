@@ -5,6 +5,8 @@ class Mood < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
   validates :state, presence: true, inclusion: { in: 1..10 }
   validates :user_id, presence: true
+  validates :latitude, presence: true
+  validates :longitude, presence: true
 
   def new_enough?
     created_at > 1.hour.ago

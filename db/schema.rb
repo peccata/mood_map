@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131103075403) do
+ActiveRecord::Schema.define(version: 20131116121309) do
 
   create_table "moods", force: true do |t|
     t.integer  "state"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20131103075403) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "timestamp"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "moods", ["user_id", "timestamp"], name: "index_moods_on_user_id_and_timestamp"
