@@ -17,7 +17,7 @@ class MoodsController < ApplicationController
   private
 
   def mood_params
-    params.require(:mood).permit(:state)
+    params.require(:mood).permit(:state, :latitude, :longitude)
   end
 
   def correct_user
