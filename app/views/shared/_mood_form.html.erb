@@ -2,6 +2,10 @@
 <span id="mood_display">6</span><br />
 <%= f.range_field :state, min: 1, max: 10, class: "mood_select" %><br />
 <div>
+  <%= f.text_field :latitude, hidden: true %>
+  <%= f.text_field :longitude, hidden: true %>
+</div>
+<div>
   <%= f.submit "Save", class: "btn btn-large btn-primary" %>
 </div>
 <% end %>
