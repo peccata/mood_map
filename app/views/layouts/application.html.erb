@@ -18,3 +18,11 @@
     </div>
 </body>
 </html>
+
+<script type="text/javascript">
+  navigator.geolocation.getCurrentPosition(handler);
+  function handler(position) {
+    document.getElementById('mood_latitude').value = position.coords.latitude;
+    document.getElementById('mood_longitude').value = position.coords.longitude;
+  }
+</script>
