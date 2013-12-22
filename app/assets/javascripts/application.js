@@ -15,3 +15,4 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require bootstrap
+//= require d3

@@ -9,6 +9,7 @@ gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branc
 gem 'faker', '1.1.2'
 gem 'figaro'
 gem 'gon'
+gem "d3-rails"
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
