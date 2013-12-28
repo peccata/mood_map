@@ -8,6 +8,8 @@ FactoryGirl.define do
 
   factory :mood do
     state 1
+    latitude 50
+    longitude 50
     user
   end
 end

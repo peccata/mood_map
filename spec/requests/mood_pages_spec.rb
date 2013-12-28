@@ -20,6 +20,8 @@ describe "MoodPages" do
     describe "with valid information" do
       before :each do
         find("input#mood_state").set("9")
+        find("input#mood_latitude").set 50
+        find("input#mood_longitude").set 50
       end
 
       it "should save mood" do
