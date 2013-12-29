@@ -6,6 +6,9 @@ class MoodsController < ApplicationController
     if @mood.save
       flash[:success] = "Saved!"
       redirect_to root_url
+    else
+      flash[:error] = ":("
+      redirect_to root_url
     end
   end
 
